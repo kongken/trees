@@ -140,6 +140,7 @@ class _CreateGoalPageState extends State<CreateGoalPage> {
             style: const TextStyle(fontSize: 16),
             autofocus: true,
             textInputAction: TextInputAction.next,
+            onChanged: (_) => setState(() {}),
           ),
           const SizedBox(height: 32),
           Container(
@@ -364,9 +365,9 @@ class _CreateGoalPageState extends State<CreateGoalPage> {
       case 0:
         return _goalController.text.trim().isNotEmpty;
       case 1:
-        return true;
+        return _selectedCategory != null;
       case 2:
-        return true;
+        return _goalController.text.trim().isNotEmpty;
       default:
         return false;
     }
