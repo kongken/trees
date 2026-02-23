@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'providers/forest_provider.dart';
 import 'theme/app_theme.dart';
 import 'screens/forest_page.dart';
@@ -7,8 +8,9 @@ import 'screens/today_page.dart';
 import 'screens/stats_page.dart';
 import 'screens/profile_page.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('zh_CN', null);
   runApp(const MyApp());
 }
 
